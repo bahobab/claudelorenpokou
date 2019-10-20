@@ -107,8 +107,8 @@ document
 
 function popImage(evt) {
   images = [...myCharacters[this.dataset.images]];
-  console.log(">>", images);
-  // const output.querySelector('img').setAttribute('src', this.src);
+  // console.log(">>", images); const
+  // output.querySelector('img').setAttribute('src', this.src);
   show
     .classList
     .remove("hide");
@@ -153,42 +153,42 @@ close
 // ******************* slider *******************************
 
 function buildSlider(images) {
-  console.log(images);
-  images.forEach(function (image, index) {
-    let slide = document.createElement("div");
-    slide.setAttribute("class", "my-slide fade");
-    let img = document.createElement("img");
-    img.setAttribute("src", images[index].img);
-    // img.style.maxHeight = 100+'%'; img.style.position = 'absolute'; img.style.top
-    // = 0; img.style.left = 0; img.style.width = '100%'; img.style.height =
-    // 'auto';
+  // console.log(images);
+  images
+    .forEach(function (image, index) {
+      let slide = document.createElement("div");
+      slide.setAttribute("class", "my-slide fade");
+      let img = document.createElement("img");
+      img.setAttribute("src", images[index].img);
+      // img.style.maxHeight = 100+'%'; img.style.position = 'absolute'; img.style.top
+      // = 0; img.style.left = 0; img.style.width = '100%'; img.style.height = 'auto';
 
-    let caption = document.createElement("div");
-    caption
-      .classList
-      .add("caption");
-    caption.innerText = images[index].caption;
+      let caption = document.createElement("div");
+      caption
+        .classList
+        .add("caption");
+      caption.innerText = images[index].caption;
 
-    slide.appendChild(img);
-    slide.appendChild(caption);
+      slide.appendChild(img);
+      slide.appendChild(caption);
 
-    // const myslider = document.querySelector('.slide-container')
-    // myslider.appendChild(slide);
-    sliderContainer.appendChild(slide);
+      // const myslider = document.querySelector('.slide-container')
+      // myslider.appendChild(slide);
+      sliderContainer.appendChild(slide);
 
-    // console.log(myslider);
+      // console.log(myslider);
 
-    let span = document.createElement("span");
-    span
-      .classList
-      .add("dot");
-    span.addEventListener("click", function (evt) {
-      // console.log(evt.target);
-      moveSlide(index);
+      let span = document.createElement("span");
+      span
+        .classList
+        .add("dot");
+      span.addEventListener("click", function (evt) {
+        // console.log(evt.target);
+        moveSlide(index);
+      });
+      // document.querySelector('.indicator').appendChild(span);
+      indicator.appendChild(span);
     });
-    // document.querySelector('.indicator').appendChild(span);
-    indicator.appendChild(span);
-  });
   playSlides();
 }
 
